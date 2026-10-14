@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+---
+<Base title="Contact" description="Discussions, collaborations, feedback on MEDIx tools, or speaking invitations.">
+  <section class="wrap">
+    <header class="page-head">
+      <p class="eyebrow kicker">Contact</p>
+      <h1>Let's Connect</h1>
+      <p>
+        For discussions, research or education collaborations, feedback on MEDIx tools, or speaking invitations.
+        Medical consultations are not available through this page.
+      </p>
+    </header>
+    <div class="card box">
+      <p class="eyebrow">Instagram</p>
+      <a class="handle" href={site.instagram} target="_blank" rel="me noopener">{site.handle}</a>
+      <p class="hint">Direct messages are the best way to reach me for now.</p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .kicker { color: var(--gold-text); }
+  .box { padding: 36px; max-width: 520px; margin-bottom: 104px; }
+  .box .eyebrow { color: var(--muted); }
+  .handle { display: inline-block; margin-top: 8px; font-size: 28px; font-weight: 800; text-decoration: none; }
+  .hint { margin-top: 10px; font-size: 15px; }
+</style>

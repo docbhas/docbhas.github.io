@@ -1,0 +1,40 @@
+---
+import { nav } from '../data/site';
+const path = Astro.url.pathname;
+---
+<header class="hdr">
+  <div class="wrap row">
+    <a href="/" class="brand" aria-label="Home">
+      <img src="/brand/bhs-mark.svg" alt="BHS" width="36" height="39" />
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        {nav.map((n) => (
+          <li><a href={n.href} aria-current={path.startsWith(n.href) ? 'page' : undefined}>{n.label}</a></li>
+        ))}
+      </ul>
+      <!-- Start Here points to About until the Start Here page is ready (Pedoman 13.4) -->
+      <a class="start" href="/about/">Start Here</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .hdr { position: relative; z-index: 2; }
+  .row { display: flex; align-items: center; justify-content: space-between; min-height: 88px; }
+  .brand img { height: 40px; width: auto; }
+  nav { display: flex; align-items: center; gap: 28px; }
+  ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+  ul a { color: var(--slate); font-weight: 500; font-size: 15px; text-decoration: none; }
+  ul a:hover, ul a[aria-current='page'] { color: var(--emerald); }
+  .start {
+    font-size: 14px; font-weight: 600; text-decoration: none; color: var(--emerald);
+    border: 1.5px solid var(--emerald); border-radius: 999px; padding: 7px 18px;
+  }
+  .start:hover { background: var(--emerald); color: var(--white); }
+  @media (max-width: 640px) {
+    nav, ul { gap: 16px; }
+    ul a { font-size: 14px; }
+    .start { display: none; }
+  }
+</style>

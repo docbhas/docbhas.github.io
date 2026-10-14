@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="730 290 460 500" width="460" height="500" role="img">
+  <title>BHS</title>
+  <g transform="translate(960.0 540.0) scale(2.9386) translate(-100 -100)">
+  
+  <defs>
+    <path id="g" d="M1068.0 620.0 Q1068 596 1088.8 584.0 L1190.5 525.5 Q1200 520 1200.0 531.0 L1200.0 681.0 Q1200 692 1192.6 700.1 L1171.7 723.0 Q1169 726 1171.8 728.9 L1192.3 750.1 Q1200 758 1200.0 769.0 L1200.0 918.0 Q1200 929 1190.5 923.5 L1088.8 865.0 Q1068 853 1068.0 829.0 Z M1117.0 629.0 Q1117 623 1122.3 620.2 L1145.7 607.8 Q1151 605 1151.0 611.0 L1151.0 669.0 Q1151 675 1146.6 679.1 L1121.4 702.9 Q1117 707 1117.0 701.0 Z M1117.0 747.0 Q1117 741 1121.2 745.2 L1146.8 770.8 Q1151 775 1151.0 781.0 L1151.0 838.0 Q1151 844 1145.8 841.1 L1122.2 827.9 Q1117 825 1117.0 819.0 Z M1215.0 526.0 Q1215 515 1224.1 508.8 L1252.9 489.2 Q1262 483 1262.0 494.0 L1262.0 697.0 Q1262 700 1265.0 700.0 L1309.0 700.0 Q1312 700 1312.0 697.0 L1312.0 496.0 Q1312 485 1321.1 491.2 L1350.9 511.8 Q1360 518 1360.0 529.0 L1360.0 924.0 Q1360 935 1350.8 941.0 L1321.2 960.0 Q1312 966 1312.0 955.0 L1312.0 753.0 Q1312 750 1309.0 750.0 L1265.0 750.0 Q1262 750 1262.0 753.0 L1262.0 953.0 Q1262 964 1252.8 957.9 L1224.2 939.1 Q1215 933 1215.0 922.0 Z M1373.0 531.0 Q1373 520 1382.5 525.5 L1489.1 587.1 Q1508 598 1508.0 619.8 L1508.0 639.0 Q1508 650 1497.0 650.0 L1469.5 650.0 Q1459 650 1459.0 639.5 L1459.0 635.5 Q1459 625 1449.8 619.9 L1432.6 610.3 Q1423 605 1423.0 616.0 L1423.0 689.0 Q1423 700 1434.0 700.0 L1497.0 700.0 Q1508 700 1508.0 711.0 L1508.0 826.0 Q1508 850 1487.3 862.1 L1382.5 923.4 Q1373 929 1373.0 918.0 L1373.0 811.0 Q1373 800 1384.0 800.0 L1412.0 800.0 Q1423 800 1423.0 811.0 L1423.0 833.0 Q1423 844 1432.6 838.7 L1449.4 829.3 Q1459 824 1459.0 813.0 L1459.0 762.0 Q1459 751 1448.0 751.0 L1384.0 751.0 Q1373 751 1373.0 740.0 Z" fill-rule="evenodd" clip-rule="evenodd"/>
+    <clipPath id="gc"><use href="#g"/></clipPath>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="10"/></filter>
+    <filter id="sh" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="13"/></filter>
+    <linearGradient id="body" gradientUnits="userSpaceOnUse" x1="1068" y1="483" x2="1508" y2="966"><stop offset="0" stop-color="#34d399" stop-opacity="0.72"/><stop offset="0.5" stop-color="#059669" stop-opacity="0.88"/><stop offset="1" stop-color="#047857" stop-opacity="0.96"/></linearGradient>
+    <linearGradient id="spec" gradientUnits="userSpaceOnUse" x1="1068" y1="483" x2="1400" y2="860">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.6"/>
+      <stop offset="0.55" stop-color="#fff" stop-opacity="0.04"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <circle cx="64" cy="60" r="28" fill="#f59e0b" fill-opacity="0.45" filter="url(#soft)"/>
+  <circle cx="134" cy="138" r="30" fill="#10b981" fill-opacity="0.5" filter="url(#soft)"/>
+  <g transform="translate(100 100) scale(0.31) translate(-1288 -724.5)">
+    <use href="#g" fill="#047857" fill-opacity="0.3" filter="url(#sh)" transform="translate(0 16)"/>
+    <use href="#g" fill="url(#body)"/>
+    <g clip-path="url(#gc)">
+      <rect x="1050" y="470" width="480" height="510" fill="url(#spec)"/>
+      <use href="#g" fill="none" stroke="#fff" stroke-opacity="0.9" stroke-width="8" stroke-linejoin="round"/>
+    </g>
+    <use href="#g" fill="none" stroke="#065f46" stroke-opacity="0.3" stroke-width="2.5" stroke-linejoin="round"/>
+  </g>
+
+  </g>
+</svg>

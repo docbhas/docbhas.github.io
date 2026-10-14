@@ -1,0 +1,85 @@
+---
+import Base from '../layouts/Base.astro';
+import { projects } from '../data/site';
+---
+<Base title="Work" description="Projects that started with a clinical question.">
+  <section class="wrap">
+    <header class="page-head">
+      <p class="eyebrow kicker">Work</p>
+      <h1>What I'm Building</h1>
+      <p>
+        Every project here started with a clinical question. Each status is stated as it is, including those still at
+        the concept stage.
+      </p>
+    </header>
+
+    <div class="grid">
+      {projects.map((p) => (
+        <article class="card proj">
+          <span class={`status ${p.status.toLowerCase()}`}>{p.status}</span>
+          <h2>{p.name}</h2>
+          <p class="q serif">“{p.question}”</p>
+          <dl>
+            <div><dt>Designed for</dt><dd>{p.for}</dd></div>
+            <div><dt>My role</dt><dd>{p.role}</dd></div>
+          </dl>
+          {p.href && <a class="link" href={p.href}>View project →</a>}
+        </article>
+      ))}
+    </div>
+
+    <section id="medix" class="medix">
+      <img src="/brand/medix-lockup-light.svg" alt="MEDIx" class="lockup" />
+      <h2>From clinical questions to practical tools.</h2>
+      <p>
+        Through MEDIx, I explore the intersection of medical science, data science, and clinical informatics by
+        developing tools to support more thoughtful healthcare solutions.
+      </p>
+      <p>
+        <strong>Designed for</strong> residents, clinicians, and medical students.
+        <strong>A thinking aid</strong>, not a substitute for clinical judgment.
+      </p>
+      <ul class="principles">
+        <li><b>Clear</b> readable on a phone</li>
+        <li><b>Transparent</b> methods and limits visible</li>
+        <li><b>Verifiable</b> sources and versions stated</li>
+      </ul>
+      <p class="soon">The first tools will be published here once each has its intended use, sources, and limitations documented.</p>
+    </section>
+  </section>
+</Base>
+
+<style>
+  .kicker { color: var(--gold-text); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 24px; }
+  .proj { padding: 28px; display: flex; flex-direction: column; gap: 12px; }
+  .status {
+    align-self: flex-start; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 999px; background: #f1f5f9; color: #475569;
+  }
+  .status.prototype { background: #fef3c7; color: #b45309; }
+  .status.active { background: #dcfce7; color: #15803d; }
+  .status.published { background: #ecfdf5; color: var(--emerald); }
+  .proj h2 { font-size: 20px; font-weight: 700; }
+  .q { font-style: italic; color: var(--forest); }
+  dl { margin: 4px 0 0; font-size: 14px; display: grid; gap: 6px; }
+  dt { display: inline; color: var(--muted); }
+  dt::after { content: ': '; }
+  dd { display: inline; margin: 0; }
+
+  .medix {
+    margin: 72px 0 104px; padding: clamp(28px, 5vw, 56px); border-radius: 24px;
+    background: var(--cool); border: 1px solid var(--mint-border); scroll-margin-top: 24px;
+  }
+  .lockup { height: 48px; width: auto; margin-bottom: 28px; }
+  .medix h2 { font-size: clamp(24px, 3vw, 32px); font-weight: 800; }
+  .medix p { margin-top: 14px; max-width: 720px; color: #1e293b; }
+  .medix strong { color: var(--forest); }
+  .principles {
+    list-style: none; padding: 0; margin: 28px 0 0;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;
+  }
+  .principles li { background: var(--white); border: 1px solid #e2e8f0; border-radius: 14px; padding: 16px 18px; font-size: 14px; color: var(--muted); }
+  .principles b { display: block; color: var(--forest); font-size: 16px; }
+  .medix .soon { font-size: 14px; color: #b45309; }
+</style>

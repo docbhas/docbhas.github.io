@@ -1,0 +1,39 @@
+---
+import { site } from '../data/site';
+---
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div class="tag">
+        <span class="threads" aria-hidden="true"><i></i><i></i><i></i></span>
+        Build · Heal · Share
+      </div>
+      <ul>
+        <li><a href={site.instagram} rel="me noopener" target="_blank">Instagram {site.handle}</a></li>
+        <li><a href="/work/#medix">MEDIx</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <p class="note">
+      I am currently in internal medicine residency training. Content on this site is educational and does not
+      replace individual medical consultation or clinical judgment. I do not provide medical consultations through
+      this site.
+    </p>
+    <p class="copy">© BHS | {site.name}</p>
+  </div>
+</footer>
+
+<style>
+  footer { background: var(--forest); color: var(--sage); padding: 48px 0 40px; font-size: 14px; }
+  .top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; align-items: center; }
+  .tag { display: flex; align-items: center; gap: 14px; color: var(--ivory); font-weight: 700; font-size: 16px; }
+  .threads { display: grid; gap: 4px; width: 40px; }
+  .threads i { height: 2px; border-radius: 2px; background: var(--emerald-light); }
+  .threads i:nth-child(2) { background: var(--sage); }
+  .threads i:nth-child(3) { background: var(--gold); }
+  ul { display: flex; flex-wrap: wrap; gap: 24px; list-style: none; margin: 0; padding: 0; }
+  a { color: var(--sage); text-decoration: none; }
+  a:hover { color: var(--ivory); }
+  .note { margin-top: 28px; max-width: 760px; line-height: 1.6; }
+  .copy { margin-top: 12px; color: var(--gold); }
+</style>
