@@ -289,7 +289,7 @@ import { pillars, site, videos } from '../data/site';
     width: 200px; aspect-ratio: 1; border-radius: 50%; overflow: hidden; position: relative;
     background: radial-gradient(circle at 50% 35%, #c9d6ca, var(--sage));
   }
-  .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 8%; transform: scale(1.12) translateY(6%); transition: transform .5s; }
+  .portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 8%; transform: scale(1.12) translateY(6%); transition: transform .5s; }
   .intro:hover .portrait img { transform: scale(1.18) translateY(5%); }
   .portrait::after {
     content: ''; position: absolute; top: 12px; right: 16px; width: 14px; height: 14px;
@@ -316,8 +316,8 @@ import { pillars, site, videos } from '../data/site';
   .share::before { background: var(--gold); } .share .num { color: var(--gold-text); }
   .pillar h3 { font-weight: 400; font-size: 22px; margin-top: 10px; }
   .body { margin-top: 12px; font-size: 15px; line-height: 1.55; }
-  .thumb { margin-top: 14px; border-radius: 12px; overflow: hidden; aspect-ratio: 16 / 9; background: var(--sage); }
-  .thumb img { width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, center); transition: transform .6s; }
+  .thumb { position: relative; flex: none; margin-top: 14px; border-radius: 12px; overflow: hidden; aspect-ratio: 16 / 9; background: var(--sage); }
+  .thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, center); transition: transform .6s; }
   .pillar:hover .thumb img { transform: scale(1.06); }
   .pillar ul { margin: 14px 0 16px; padding-left: 18px; font-size: 14px; color: var(--forest); }
   .pillar .link { font-size: 15px; }
@@ -332,7 +332,7 @@ import { pillars, site, videos } from '../data/site';
   .videos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
   .video { overflow: hidden; }
   .yt, .video :global(iframe) { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; padding: 0; background: var(--forest); cursor: pointer; position: relative; }
-  .yt img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s, opacity .3s; }
+  .yt img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s, opacity .3s; }
   .video:hover .yt img { transform: scale(1.05); opacity: .85; }
   .play {
     position: absolute; left: 50%; top: 50%; width: 58px; height: 58px; translate: -50% -50%;
