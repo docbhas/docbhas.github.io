@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
 ---
 <Base title="About" description="Internist-in-training, curious clinical developer, and lifelong learner.">
   <section class="wrap">
@@ -57,7 +58,7 @@ import Base from '../layouts/Base.astro';
 
       <div class="ctas">
         <a class="btn btn-primary" href="/work/">Explore my work</a>
-        <a class="btn btn-ghost" href="/work/#medix">Explore MEDIx</a>
+        <a class="btn btn-ghost" href={site.medix} target="_blank" rel="noopener">Explore MEDIx</a>
         <a class="btn btn-ghost" href="/contact/">Get in touch</a>
       </div>
     </div>

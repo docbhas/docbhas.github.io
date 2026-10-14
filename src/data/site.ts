@@ -5,6 +5,7 @@ export const site = {
   name: 'Ida Bagus Aditya Bhaskara',
   instagram: 'https://www.instagram.com/docbhas/',
   handle: '@docbhas',
+  medix: 'https://sites.google.com/view/medix-bhs',
 };
 
 export const nav = [

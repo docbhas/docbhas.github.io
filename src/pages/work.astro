@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
+import { site } from '../data/site';
 
 const projects = (await getCollection('projects', (p) => !p.data.draft))
   .map((p) => p.data)
@@ -50,7 +51,8 @@ const projects = (await getCollection('projects', (p) => !p.data.draft))
         <li><b>Transparent</b> methods and limits visible</li>
         <li><b>Verifiable</b> sources and versions stated</li>
       </ul>
-      <p class="soon">The first tools will be published here once each has its intended use, sources, and limitations documented.</p>
+      <p class="open"><a class="btn btn-primary" href={site.medix} target="_blank" rel="noopener">Explore MEDIx →</a></p>
+      <p class="soon">Hosted on Google Sites so the tools also open on hospital networks that only allow Google services.</p>
     </section>
   </section>
 </Base>
@@ -89,5 +91,6 @@ const projects = (await getCollection('projects', (p) => !p.data.draft))
   }
   .principles li { background: var(--white); border: 1px solid #e2e8f0; border-radius: 14px; padding: 16px 18px; font-size: 14px; color: var(--muted); }
   .principles b { display: block; color: var(--forest); font-size: 16px; }
-  .medix .soon { font-size: 14px; color: #b45309; }
+  .medix .open { margin-top: 28px; }
+  .medix .soon { font-size: 14px; color: var(--muted); }
 </style>
