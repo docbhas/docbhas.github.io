@@ -3,13 +3,13 @@ name: EchoSim
 track: Learning
 question: How can residents learn normal adult echocardiography views before scanning patients?
 for: Internal medicine residents
-status: Prototype       # TODO: confirm
-version: v0.1           # TODO: confirm
+status: Prototype
+version: v0.1
 updated: 2026-10
 role: Designer, developer
 limitations: Educational only; handles no patient data and is not for clinical decision-making. Opens outside hospital intranets.
 link: https://medix-echosim.vercel.app/
-draft: true
+draft: false
 ---
 
 ## What it does

@@ -3,13 +3,13 @@ name: PSIKOPAL · Psychosomatic & Palliative
 track: Tools
 question: Which patients need psychosomatic or palliative care input, and how urgently?
 for: Internal medicine residents
-status: Prototype       # TODO: confirm
-version: v0.1           # TODO: confirm
+status: Prototype
+version: v0.1
 updated: 2026-10
 role: Designer, developer, content author
 limitations: Screening scores only; a positive screen calls for clinical assessment, not a diagnosis.
 link: https://script.google.com/macros/s/AKfycbwWMaePZ3bc4XhbfVWLV6GIC4aejo8mH2kpH-Hqc3i6tswBWgiU4wU6wbJ87RasvepHXA/exec
-draft: true
+draft: false
 ---
 
 ## What it does
