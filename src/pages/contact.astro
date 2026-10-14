@@ -1,29 +1,90 @@
 ---
 import Base from '../layouts/Base.astro';
 import { site } from '../data/site';
+
+const topics = [
+  { title: 'Discussions', text: 'Medicine, data, and how to make both more human.', color: 'var(--heal)' },
+  { title: 'Collaboration', text: 'Research, education, or building a tool together.', color: 'var(--build)' },
+  { title: 'MEDIx feedback', text: 'An error spotted, or an idea for a tool.', color: 'var(--emerald)' },
+  { title: 'Speaking', text: 'Talks on clinical informatics and humane care.', color: 'var(--share)' },
+];
 ---
 <Base title="Contact" description="Discussions, collaborations, feedback on MEDIx tools, or speaking invitations.">
-  <section class="wrap">
-    <header class="page-head">
-      <p class="eyebrow kicker">Contact</p>
-      <h1>Let's Connect</h1>
-      <p>
-        For discussions, research or education collaborations, feedback on MEDIx tools, or speaking invitations.
-        Medical consultations are not available through this page.
+  <section class="wrap contact">
+    <div class="intro">
+      <header class="page-head">
+        <p class="eyebrow kicker">Contact · Share</p>
+        <h1>Let's Connect</h1>
+        <p>
+          For discussions, research or education collaborations, feedback on MEDIx tools, or speaking invitations.
+        </p>
+      </header>
+
+      <ul class="topics">
+        {topics.map((t) => (
+          <li class="card" style={`--c: ${t.color}`}>
+            <b>{t.title}</b>
+            <span>{t.text}</span>
+          </li>
+        ))}
+      </ul>
+
+      <p class="note">
+        <b>Medical consultations are not available through this page.</b>
+        Please do not send patient-identifying information.
       </p>
-    </header>
-    <div class="card box">
-      <p class="eyebrow">Instagram</p>
-      <a class="handle" href={site.instagram} target="_blank" rel="me noopener">{site.handle}</a>
-      <p class="hint">Direct messages are the best way to reach me for now.</p>
+    </div>
+
+    <div class="channels">
+      <a class="channel ig card lift" href={site.instagram} target="_blank" rel="me noopener">
+        <span class="eyebrow">Instagram · direct message</span>
+        <span class="handle">{site.handle}</span>
+        <span class="hint">The quickest way to reach me for now.</span>
+        <span class="go">Open Instagram <i>→</i></span>
+      </a>
+      <a class="channel card lift" href={site.medix} target="_blank" rel="noopener">
+        <span class="eyebrow">MEDIx · feedback form</span>
+        <span class="title">Report an error or suggest a tool</span>
+        <span class="hint">Opens the MEDIx page; the form is at the bottom.</span>
+        <span class="go">Open MEDIx <i>→</i></span>
+      </a>
     </div>
   </section>
 </Base>
 
 <style>
-  .kicker { color: var(--gold-text); }
-  .box { padding: 36px; max-width: 520px; margin-bottom: 104px; }
-  .box .eyebrow { color: var(--muted); }
-  .handle { display: inline-block; margin-top: 8px; font-size: 28px; font-weight: 800; text-decoration: none; }
-  .hint { margin-top: 10px; font-size: 15px; }
+  .contact {
+    display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 48px;
+    align-items: start; padding-bottom: 96px;
+  }
+  .kicker { color: var(--share-text); }
+
+  .topics { list-style: none; padding: 0; margin: 8px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .topics li { padding: 16px 18px; border-left: 4px solid var(--c); display: grid; gap: 2px; }
+  .topics b { color: var(--forest); font-size: 15px; }
+  .topics span { font-size: 14px; color: var(--muted); line-height: 1.5; }
+
+  .note { margin-top: 20px; font-size: 14px; color: var(--slate); }
+  .note b { color: var(--forest); }
+
+  .channels { display: grid; gap: 16px; padding-top: 64px; }
+  .channel { display: grid; gap: 6px; padding: 26px 26px 22px; text-decoration: none; color: inherit; position: relative; overflow: hidden; }
+  .channel::before { content: ''; position: absolute; inset: 0 0 auto; height: 6px; background: var(--emerald); transition: height .35s; }
+  .channel.ig::before { background: var(--share); }
+  .channel:hover::before { height: 10px; }
+  .channel .eyebrow { color: var(--muted); font-size: 11px; }
+  .handle { font-size: clamp(26px, 3.4vw, 34px); font-weight: 800; color: var(--forest); letter-spacing: -.02em; }
+  .title { font-size: 20px; font-weight: 700; color: var(--forest); }
+  .hint { font-size: 14px; color: var(--muted); }
+  .go { margin-top: 8px; font-weight: 600; font-size: 15px; color: var(--emerald); }
+  .go i { display: inline-block; font-style: normal; transition: transform .3s; }
+  .channel:hover .go i { transform: translateX(4px); }
+
+  @media (max-width: 860px) {
+    .contact { grid-template-columns: 1fr; gap: 8px; }
+    .channels { padding-top: 24px; }
+  }
+  @media (max-width: 520px) {
+    .topics { grid-template-columns: 1fr; }
+  }
 </style>

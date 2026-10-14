@@ -14,9 +14,9 @@ import { pillars, site, videos } from '../data/site';
     <section class="hero">
       <div class="mark-zone">
         <svg class="threads" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <path pathLength="1" d="M-20 70 C 260 80, 420 120, 520 170 C 560 190, 580 200, 600 210" stroke="var(--emerald)" />
-          <path pathLength="1" d="M600 -10 L600 210" stroke="var(--sage)" class="mid" />
-          <path pathLength="1" d="M1220 70 C 940 80, 780 120, 680 170 C 640 190, 620 200, 600 210" stroke="var(--gold)" />
+          <path pathLength="1" d="M-20 70 C 260 80, 420 120, 520 170 C 560 190, 580 200, 600 210" stroke="var(--build)" />
+          <path pathLength="1" d="M600 -10 L600 210" stroke="var(--heal)" class="mid" />
+          <path pathLength="1" d="M1220 70 C 940 80, 780 120, 680 170 C 640 190, 620 200, 600 210" stroke="var(--share)" />
         </svg>
         <div class="halo"></div>
         <img class="mark" src="/brand/bhs-mark-animated.svg" alt="BHS logo" width="340" height="350" />
@@ -126,7 +126,7 @@ import { pillars, site, videos } from '../data/site';
 
 <script>
   // ---------- Threads: intertwine from the hero, then split into the three pillar cards ----------
-  const COLORS: Record<string, string> = { build: 'var(--emerald)', heal: 'var(--sage)', share: 'var(--gold)' };
+  const COLORS: Record<string, string> = { build: 'var(--build)', heal: 'var(--heal)', share: 'var(--share)' };
   const ORDER = ['build', 'heal', 'share'];
   const journey = document.getElementById('journey')!;
   const group = document.getElementById('journey-paths')!;
@@ -213,14 +213,6 @@ import { pillars, site, videos } from '../data/site';
 </script>
 
 <style>
-  /* ---------- shared hover ---------- */
-  .lift { transition: transform .35s cubic-bezier(.2, .8, .2, 1), box-shadow .35s, border-color .35s; }
-  .lift:hover, .lift:focus-within {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 40px -18px rgb(2 44 34 / .35);
-    border-color: rgb(2 44 34 / .18);
-  }
-
   /* ---------- journey threads ---------- */
   .journey { position: relative; }
   .journey > section { position: relative; z-index: 1; }
@@ -266,9 +258,9 @@ import { pillars, site, videos } from '../data/site';
   }
   .strands li { display: flex; align-items: center; gap: 8px; }
   .strands li::before { content: ''; width: 18px; height: 3px; border-radius: 2px; }
-  .s1 { color: var(--emerald); } .s1::before { background: var(--emerald); }
-  .s2 { color: var(--sage-text); } .s2::before { background: var(--sage); }
-  .s3 { color: var(--gold-text); } .s3::before { background: var(--gold); }
+  .s1 { color: var(--build-text); } .s1::before { background: var(--build); }
+  .s2 { color: var(--heal-text); } .s2::before { background: var(--heal); }
+  .s3 { color: var(--share-text); } .s3::before { background: var(--share); }
   .ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 32px; }
   .thread-start { height: 56px; margin-top: 20px; }
 
@@ -311,9 +303,9 @@ import { pillars, site, videos } from '../data/site';
     transform-origin: left; transition: height .35s;
   }
   .pillar:hover::before, .pillar:focus-within::before { height: 10px; }
-  .build::before { background: var(--emerald); } .build .num { color: var(--emerald); }
-  .heal::before { background: var(--sage); } .heal .num { color: var(--sage-text); }
-  .share::before { background: var(--gold); } .share .num { color: var(--gold-text); }
+  .build::before { background: var(--build); } .build .num { color: var(--build-text); }
+  .heal::before { background: var(--heal); } .heal .num { color: var(--heal-text); }
+  .share::before { background: var(--share); } .share .num { color: var(--share-text); }
   .pillar h3 { font-weight: 400; font-size: 22px; margin-top: 10px; }
   .body { margin-top: 12px; font-size: 15px; line-height: 1.55; }
   .thumb { position: relative; flex: none; margin-top: 14px; border-radius: 12px; overflow: hidden; aspect-ratio: 16 / 9; background: var(--sage); }
@@ -375,8 +367,5 @@ import { pillars, site, videos } from '../data/site';
     .portrait { width: 160px; margin: 0 auto; }
     .videos { grid-template-columns: 1fr; }
     .medix { padding: 22px; gap: 18px; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .lift:hover, .lift:focus-within { transform: none; }
   }
 </style>
