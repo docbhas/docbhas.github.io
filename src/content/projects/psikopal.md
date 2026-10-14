@@ -8,7 +8,7 @@ version: v0.1
 updated: 2026-10
 role: Designer, developer, content author
 limitations: Screening scores only; a positive screen calls for clinical assessment, not a diagnosis.
-link: https://script.google.com/macros/s/AKfycbwWMaePZ3bc4XhbfVWLV6GIC4aejo8mH2kpH-Hqc3i6tswBWgiU4wU6wbJ87RasvepHXA/exec
+link: https://sites.google.com/view/medix-bhs/projects/psikopal
 draft: false
 ---
 
