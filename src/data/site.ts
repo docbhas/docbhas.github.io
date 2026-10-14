@@ -14,6 +14,30 @@ export const nav = [
   { href: '/contact/', label: 'Contact' },
 ];
 
+export const talks = [
+  {
+    img: '/images/research-presentation.webp',
+    alt: 'Gus Bhas presenting a research poster on a large screen',
+    kind: 'Research presentation',
+    pos: '70% 30%',
+    title: 'Prognostic scores for disease-specific mortality in differentiated thyroid carcinoma: a systematic review and meta-analysis',
+  },
+  {
+    img: '/images/health-talk.webp',
+    alt: 'Gus Bhas giving a health talk with a microphone in a hospital lobby',
+    kind: 'Health education',
+    pos: '50% 25%',
+    title: 'Community health talk in the hospital lobby',
+  },
+];
+
+// Earlier explainer videos (INTERNADDICT channel), made before BHS.
+export const videos = [
+  { id: 'wMmARxsqq0A', title: '#PDKT Anemia · Ep. 1: Intro', topic: 'Diagnostic approach to anemia' },
+  { id: 'WRHJZ7m4ozI', title: '#PDKT Anemia · Ep. 2: Hypochromic microcytic', topic: 'Hypochromic microcytic anemia' },
+  { id: '6RaPdng5XOo', title: 'COVID-19: diagnosis and initial management at triage and primary care', topic: 'May 2020' },
+];
+
 export const pillars = [
   {
     key: 'build',
