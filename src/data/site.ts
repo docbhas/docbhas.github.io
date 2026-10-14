@@ -14,28 +14,11 @@ export const nav = [
   { href: '/contact/', label: 'Contact' },
 ];
 
-export const talks = [
-  {
-    img: '/images/research-presentation.webp',
-    alt: 'Gus Bhas presenting a research poster on a large screen',
-    kind: 'Research presentation',
-    pos: '70% 30%',
-    title: 'Prognostic scores for disease-specific mortality in differentiated thyroid carcinoma: a systematic review and meta-analysis',
-  },
-  {
-    img: '/images/health-talk.webp',
-    alt: 'Gus Bhas giving a health talk with a microphone in a hospital lobby',
-    kind: 'Health education',
-    pos: '50% 25%',
-    title: 'Community health talk in the hospital lobby',
-  },
-];
-
 // Earlier explainer videos (INTERNADDICT channel), made before BHS.
 export const videos = [
-  { id: 'wMmARxsqq0A', title: '#PDKT Anemia · Ep. 1: Intro', topic: 'Diagnostic approach to anemia' },
-  { id: 'WRHJZ7m4ozI', title: '#PDKT Anemia · Ep. 2: Hypochromic microcytic', topic: 'Hypochromic microcytic anemia' },
-  { id: '6RaPdng5XOo', title: 'COVID-19: diagnosis and initial management at triage and primary care', topic: 'May 2020' },
+  { id: 'wMmARxsqq0A', title: '#PDKT Anemia · Ep. 1: Intro', date: 'Jul 2020' },
+  { id: 'WRHJZ7m4ozI', title: '#PDKT Anemia · Ep. 2: Hypochromic microcytic', date: 'Sep 2020' },
+  { id: '6RaPdng5XOo', title: 'COVID-19: diagnosis and initial management at triage and primary care', date: 'May 2020' },
 ];
 
 export const pillars = [
@@ -45,6 +28,7 @@ export const pillars = [
     label: 'Build Creatively',
     question: 'What is truly worth developing?',
     body: 'I design clinical decision support tools, dashboards, and data analyses from questions that come up in practice.',
+    img: { src: '/images/research-presentation.webp', pos: '72% 30%', alt: 'Gus Bhas presenting a systematic review and meta-analysis on a large screen' },
     points: ['Clinical calculators', 'Dashboards & ML analyses', 'Status stated honestly'],
     cta: { label: "See what I'm building", href: '/work/' },
   },
@@ -54,6 +38,7 @@ export const pillars = [
     label: 'Heal Holistically',
     question: 'Who is the person behind the numbers?',
     body: 'I learn to care for the whole person: evidence, clinical reasoning, life context, and emotional needs.',
+    img: { src: '/images/yoga-dm-poster.webp', pos: '50% 38%', alt: 'Gus Bhas beside his poster on yoga as a complementary intervention for type 2 diabetes' },
     points: ['Clinical reasoning notes', 'Communication & uncertainty', 'Integrative care, clear limits'],
     cta: { label: 'Read my perspective', href: '/about/' },
   },
@@ -63,6 +48,7 @@ export const pillars = [
     label: 'Share Meaningfully',
     question: 'What is worth sharing, and who will it help?',
     body: "I share learning notes, educational material, scientific posters, and the process of building tools, including what hasn't worked yet.",
+    img: { src: '/images/health-talk.webp', pos: '55% 22%', alt: 'Gus Bhas giving a health talk with a microphone' },
     points: ['Learning notes & essays', 'Scientific posters', 'Instagram @docbhas'],
     cta: { label: 'Explore what I share', href: 'https://www.instagram.com/docbhas/' },
   },
