@@ -43,36 +43,3 @@ export const pillars = [
   },
 ];
 
-export type Status = 'Concept' | 'Prototype' | 'Active' | 'Published';
-
-// TODO(Gus Bhas): confirm question, audience, status, and role for each project before publishing.
-export const projects: {
-  name: string;
-  question: string;
-  for: string;
-  status: Status;
-  role: string;
-  href?: string;
-}[] = [
-  {
-    name: 'Acid–base & electrolyte calculator',
-    question: 'How can acid–base disorders be read step by step?',
-    for: 'Internal medicine residents',
-    status: 'Prototype',
-    role: 'Designer, developer, content author',
-  },
-  {
-    name: 'eMATCA',
-    question: '[Clinical question this project answers]',
-    for: '[Intended users]',
-    status: 'Concept',
-    role: '[Role]',
-  },
-  {
-    name: 'LUPINA',
-    question: '[Clinical question this project answers]',
-    for: '[Intended users]',
-    status: 'Concept',
-    role: '[Role]',
-  },
-];
