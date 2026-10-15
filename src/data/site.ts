@@ -11,6 +11,7 @@ export const site = {
 export const nav = [
   { href: '/about/', label: 'About' },
   { href: '/work/', label: 'Work' },
+  { href: '/share/', label: 'Share' },
   { href: '/contact/', label: 'Contact' },
 ];
 
@@ -47,7 +48,7 @@ export const pillars = [
     question: 'What is worth sharing, and who will it help?',
     body: "I share what I learn and the process of building tools, honestly.",
     img: { src: '/images/health-talk.webp', pos: '55% 22%', alt: 'Gus Bhas giving a health talk with a microphone' },
-    cta: { label: 'Explore what I share', href: 'https://www.instagram.com/docbhas/' },
+    cta: { label: 'Explore what I share', href: '/share/' },
   },
 ];
 

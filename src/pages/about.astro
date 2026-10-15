@@ -38,7 +38,7 @@ import { site } from '../data/site';
       <p>I believe the best solutions begin with understanding how medicine, technology, and humanity fit together.</p>
       
       <figure class="inline-photo">
-        <img src="/images/yoga-dm-poster.webp" alt="Gus Bhas beside his first scientific poster, on yoga for type 2 diabetes" width="675" height="900" loading="lazy" />
+        <a href="/images/yoga-dm-poster.webp" target="_blank" rel="noopener"><img src="/images/yoga-dm-poster.webp" alt="Gus Bhas beside his first scientific poster: Yoga as a Complementary Psycho-Neuro-Endocrine Intervention on Adults with Type-2 Diabetes Mellitus, a systematic review and meta-analysis" width="1499" height="2000" loading="lazy" /></a>
         <figcaption>My first ever scientific poster.</figcaption>
       </figure>
 
@@ -82,7 +82,7 @@ import { site } from '../data/site';
   .kicker { color: var(--gold-text); }
   .about { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 64px; align-items: start; }
   .main-col { grid-column: 1; grid-row: 1; }
-  .side { grid-column: 2; grid-row: 1; position: sticky; top: 32px; padding-top: 72px; }
+  .side { grid-column: 2; grid-row: 1; padding-top: 64px; }
   .head { padding-bottom: 8px; }
   .photo {
     width: 100%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; position: relative;
@@ -101,7 +101,7 @@ import { site } from '../data/site';
     .head { padding-top: 28px; }
   }
   .inline-photo { margin: 28px 0 8px; }
-  .inline-photo img { width: 100%; max-height: 420px; object-fit: cover; object-position: 50% 35%; border-radius: 16px; }
+  .inline-photo img { width: 100%; max-width: 560px; height: auto; border-radius: 16px; }
   .inline-photo figcaption { margin-top: 8px; font-size: 14px; color: var(--muted); font-style: italic; }
   .prose { padding-bottom: 96px; max-width: none; }
   .prose h2:first-of-type { margin-top: 36px; }
