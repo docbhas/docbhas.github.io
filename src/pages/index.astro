@@ -60,7 +60,7 @@ import { pillars, site, videos } from '../data/site';
 
     <!-- Pillars -->
     <section class="wrap pillars-sec">
-      <p class="bridge serif" id="bridge">“Every path starts with a question. Only the form of the answer changes.”</p>
+      <p class="bridge serif" id="bridge">“Every path starts with a question.”</p>
       <div class="pillars">
         {pillars.map((p) => (
           <article class={`pillar card lift ${p.key}`} data-thread={p.key}>
@@ -68,7 +68,6 @@ import { pillars, site, videos } from '../data/site';
             <h3 class="serif">{p.question}</h3>
             <p class="body">{p.body}</p>
             <div class="thumb"><img src={p.img.src} alt={p.img.alt} loading="lazy" width="900" height="600" style={`--pos: ${p.img.pos}`} /></div>
-            <ul>{p.points.map((pt) => <li>{pt}</li>)}</ul>
             <a class="link" href={p.cta.href} {...(p.cta.href.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {})}>
               {p.cta.label} →
             </a>
@@ -312,7 +311,7 @@ import { pillars, site, videos } from '../data/site';
   .thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, center); transition: transform .6s; }
   .pillar:hover .thumb img { transform: scale(1.06); }
   .pillar ul { margin: 14px 0 16px; padding-left: 18px; font-size: 14px; color: var(--forest); }
-  .pillar .link { font-size: 15px; }
+  .pillar .link { font-size: 15px; margin-top: 16px; }
   .pillar .link, .medix .link { transition: letter-spacing .3s; }
   .pillar:hover .link, .medix:hover .link { letter-spacing: .02em; }
 

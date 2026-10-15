@@ -99,7 +99,7 @@ const tracks = [...new Set(projects.map((p) => p.track))];
     font: 600 13px var(--sans); padding: 7px 16px; border-radius: 999px; cursor: pointer;
     background: var(--white); color: var(--slate); border: 1px solid var(--line); transition: background .2s, color .2s;
   }
-  .filters button[aria-pressed='true'] { background: var(--build); color: var(--ivory); border-color: var(--build); }
+  .filters button[aria-pressed='true'] { background: var(--build-text); color: var(--white); border-color: var(--build-text); }
 
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 22px; align-items: start; }
   .proj {

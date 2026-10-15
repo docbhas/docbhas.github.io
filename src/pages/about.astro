@@ -15,7 +15,7 @@ import { site } from '../data/site';
       <p class="eyebrow kicker">About</p>
       <h1>Hi, I'm Gus Bhas</h1>
       <p>
-        I'm an internist-in-training, a curious clinical developer, and a lifelong learner exploring the
+        I'm an internist-in-training based in Bali (IDN), a curious clinical developer, and a lifelong learner exploring the
         intersection of clinical medicine, health informatics, creativity, and human connection.
       </p>
     </header>
@@ -30,12 +30,17 @@ import { site } from '../data/site';
       </p>
       <p>Beyond data and diagnoses, there is the person living with the disease.</p>
       <p>
-        As an internal medicine resident in Bali, I keep learning that clinical data tell only part of the story.
+        I keep learning that clinical data tell only part of the story.
         Understanding the person behind them takes context, curiosity, and human connection. Yet personalizing care
         also means understanding how each person's clinical characteristics differ from others in a similar
         population, and that requires clinical informatics and statistics.
       </p>
       <p>I believe the best solutions begin with understanding how medicine, technology, and humanity fit together.</p>
+      
+      <figure class="inline-photo">
+        <img src="/images/yoga-dm-poster.webp" alt="Gus Bhas beside his first scientific poster, on yoga for type 2 diabetes" width="675" height="900" loading="lazy" />
+        <figcaption>My first ever scientific poster.</figcaption>
+      </figure>
 
       <h2>What I'm Doing</h2>
       <p>
@@ -95,6 +100,9 @@ import { site } from '../data/site';
     .photo { width: 200px; margin: 0 auto; }
     .head { padding-top: 28px; }
   }
+  .inline-photo { margin: 28px 0 8px; }
+  .inline-photo img { width: 100%; max-height: 420px; object-fit: cover; object-position: 50% 35%; border-radius: 16px; }
+  .inline-photo figcaption { margin-top: 8px; font-size: 14px; color: var(--muted); font-style: italic; }
   .prose { padding-bottom: 96px; max-width: none; }
   .prose h2:first-of-type { margin-top: 36px; }
   .motto { margin-top: 32px !important; font-size: 22px; font-style: italic; color: var(--forest); }

@@ -1,5 +1,5 @@
 /* Tokens: BHS editorial palette (Pedoman v1.8, 6.1) + MEDIx accents (6.2)
-   Pillar colors: Build = forest #022C22, Heal = teal #0F766E, Share = gold #C49A54 (Pedoman 6.1.1) */
+   Pillar colors: Build = teal #0D9488, Heal = green #15803D, Share = gold #C49A54 (Pedoman 6.1.1) */
 :root {
   --forest: #022c22;
   --emerald: #047857;
@@ -20,12 +20,15 @@
   --line: rgb(2 44 34 / 0.1);
 
   /* Pillars */
-  --build: #022c22;
-  --build-text: #022c22;
-  --heal: #0f766e;
-  --heal-text: #115e59;
+  --build: #0d9488;
+  --build-text: #0f766e;
+  --build-light: #2dd4bf;
+  --heal: #15803d;
+  --heal-text: #166534;
+  --heal-light: #4ade80;
   --share: #c49a54;
   --share-text: #8a6a32;
+  --share-light: #d6b273;
 
   --sans: 'Manrope', 'Segoe UI', system-ui, sans-serif;
   --serif: 'Lora', Georgia, serif;
