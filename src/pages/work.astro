@@ -1,12 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { getCollection } from 'astro:content';
 import { site } from '../data/site';
-
-const projects = (await getCollection('projects', (p) => !p.data.draft))
-  .map((p) => p.data)
-  .sort((a, b) => b.updated.localeCompare(a.updated));
-const tracks = [...new Set(projects.map((p) => p.track))];
 ---
 <Base title="Work" description="Projects that started with a clinical question.">
   <section class="wrap">
@@ -14,44 +8,10 @@ const tracks = [...new Set(projects.map((p) => p.track))];
       <p class="eyebrow kicker">Work · Build</p>
       <h1>What I'm Building</h1>
       <p>
-        Every project here started with a clinical question. Each status is stated as it is, including those still at
-        the concept stage.
+        Every project I build starts with a clinical question. For now, they all live in MEDIx, each with its status,
+        intended use, and limits stated as they are.
       </p>
     </header>
-
-    {projects.length === 0 && <p class="empty">Project write-ups are being prepared and will appear here soon.</p>}
-
-    {tracks.length > 1 && (
-      <div class="filters" role="group" aria-label="Filter by track">
-        <button type="button" aria-pressed="true" data-track="all">All · {projects.length}</button>
-        {tracks.map((t) => (
-          <button type="button" aria-pressed="false" data-track={t}>
-            {t} · {projects.filter((p) => p.track === t).length}
-          </button>
-        ))}
-      </div>
-    )}
-
-    <div class="grid">
-      {projects.map((p) => (
-        <article class="card proj lift" data-track={p.track}>
-          <p class="meta">
-            <span class={`status ${p.status.toLowerCase()}`}>{p.status}</span>
-            <span class="track">{p.track} · {p.version}</span>
-          </p>
-          <h2>
-            {p.link ? <a href={p.link} target="_blank" rel="noopener">{p.name}</a> : p.name}
-          </h2>
-          <p class="q serif">“{p.question}”</p>
-          <dl>
-            <div><dt>Designed for</dt><dd>{p.for}</dd></div>
-            <div><dt>My role</dt><dd>{p.role}</dd></div>
-          </dl>
-          <p class="limits"><b>Limits</b> {p.limitations}</p>
-          {p.link && <span class="go" aria-hidden="true">View project <i>→</i></span>}
-        </article>
-      ))}
-    </div>
 
     <section id="medix" class="medix">
       <div>
@@ -78,63 +38,11 @@ const tracks = [...new Set(projects.map((p) => p.track))];
   </section>
 </Base>
 
-<script>
-  const buttons = document.querySelectorAll<HTMLButtonElement>('.filters button');
-  buttons.forEach((btn) =>
-    btn.addEventListener('click', () => {
-      const t = btn.dataset.track;
-      buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
-      document.querySelectorAll<HTMLElement>('.proj').forEach((card) => {
-        card.hidden = t !== 'all' && card.dataset.track !== t;
-      });
-    }),
-  );
-</script>
-
 <style>
   .kicker { color: var(--build-text); }
-  .empty { color: var(--muted); }
-
-  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
-  .filters button {
-    font: 600 13px var(--sans); padding: 7px 16px; border-radius: 999px; cursor: pointer;
-    background: var(--white); color: var(--slate); border: 1px solid var(--line); transition: background .2s, color .2s;
-  }
-  .filters button[aria-pressed='true'] { background: var(--build-text); color: var(--white); border-color: var(--build-text); }
-
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 22px; align-items: start; }
-  .proj {
-    position: relative; overflow: hidden; padding: 26px 24px 22px;
-    display: flex; flex-direction: column; gap: 10px;
-  }
-  .proj::before { content: ''; position: absolute; inset: 0 0 auto; height: 6px; background: var(--build); transition: height .35s; }
-  .proj:hover::before, .proj:focus-within::before { height: 10px; }
-  .meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 12px; color: var(--muted); }
-  .status {
-    font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
-    padding: 4px 12px; border-radius: 999px; background: #f1f5f9; color: #475569;
-  }
-  .status.prototype { background: #fef3c7; color: #b45309; }
-  .status.active { background: #dcfce7; color: #15803d; }
-  .status.published { background: #ecfdf5; color: var(--emerald); }
-  .proj h2 { font-size: 20px; font-weight: 700; line-height: 1.3; }
-  .proj h2 a { color: inherit; text-decoration: none; }
-  /* The whole card is the link target. */
-  .proj h2 a::after { content: ''; position: absolute; inset: 0; }
-  .q { font-style: italic; color: var(--forest); font-size: 16px; }
-  dl { margin: 0; font-size: 14px; display: grid; gap: 4px; }
-  dt { display: inline; color: var(--muted); }
-  dt::after { content: ': '; }
-  dd { display: inline; margin: 0; }
-  .limits { font-size: 13px; background: #fffbeb; color: #92400e; border-radius: 10px; padding: 8px 12px; }
-  .limits b { margin-right: 4px; }
-  .go { margin-top: 4px; font-weight: 600; font-size: 15px; color: var(--emerald); }
-  .go i { display: inline-block; font-style: normal; transition: transform .3s; }
-  .proj:hover .go i { transform: translateX(4px); }
-
   .medix {
     display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 40px; align-items: center;
-    margin: 64px 0 96px; padding: clamp(28px, 4vw, 48px); border-radius: 24px;
+    margin: 8px 0 96px; padding: clamp(28px, 4vw, 48px); border-radius: 24px;
     background: var(--cool); border: 1px solid var(--mint-border); scroll-margin-top: 24px;
   }
   .lockup { height: 44px; width: auto; margin-bottom: 22px; }
